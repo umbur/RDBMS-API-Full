@@ -4,7 +4,8 @@
   "description": "- Databases\r - Relational Databases\r - Knex migrations.\r - Seeding data.",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon index.js"
+    "start": "node index.js",
+    "server": "nodemon"
   },
   "repository": {
     "type": "git",
