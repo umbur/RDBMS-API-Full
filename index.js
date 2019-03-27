@@ -1,17 +1,10 @@
-const express = require("express");
-const helmet = require("helmet");
-const knex = require("knex");
+const server = require('./api/server.js');
 
-const knexConfig = require("./knexfile.js");
-
-const server = express();
-
-server.use(express.json());
-server.use(helmet());
-
-const db = knex(knexConfig.development);
+server.get('/', (req, res) => {
+  res.status(200).json({ message: 'Server is working' });
+})
 
 const port = 5000;
-server.listen(port, function() {
-  console.log(`\n=== Web API Listening on http://localhost:${port} ===\n`);
-}); 
+server.listen(port, () => {
+console.log(`\n=== Web API Listening on http://localhost:${port} ===\n`);
+});
